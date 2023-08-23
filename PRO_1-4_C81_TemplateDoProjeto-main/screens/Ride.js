@@ -69,9 +69,7 @@ export default class RideScreen extends Component {
 
 
         
-        if (!transactionType) {
-            // se 'transactionType' estiver vazio, faça o valor 'bikeId' como "" 
-           
+        
             
             // Faça uma mensagem de alerta para aparecer na tela para inserir um ID de bicicleta válido
             if (!transactionType) {
@@ -167,6 +165,7 @@ export default class RideScreen extends Component {
 
                 if (!doc.data().under_maintenance) {
                     //se a bicicleta estiver disponível, o tipo de transação será 'rented' (alugado), 
+                    transactionType = doc.data().is_bike_available?"Alugado":"Retornar"
                     //caso contrário, será 'return' (devolver)
 
                     
